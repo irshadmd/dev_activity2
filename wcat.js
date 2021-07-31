@@ -3,6 +3,7 @@ let path = require('path');
 let displayCon = require('./commands/displayCon.js')
 let funS = require('./commands/funS.js')
 let funN = require('./commands/funN.js')
+let funB = require('./commands/funB.js')
 
 let inputArr = process.argv.slice(2);
 
@@ -55,7 +56,8 @@ switch (command) {
         console.log(funN.funN(filesArr));
         break;
     case "-b":
-        console.log("give numbering to non-empty lines")
+        // console.log("give numbering to non-empty lines")
+        console.log(funB.funB(filesArr));
         break;
     case "mix":
         console.log("We can mix and match the options.")
