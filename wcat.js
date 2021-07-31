@@ -2,6 +2,7 @@ let fs = require('fs');
 let path = require('path');
 let displayCon = require('./commands/displayCon.js')
 let funS = require('./commands/funS.js')
+let funN = require('./commands/funN.js')
 
 let inputArr = process.argv.slice(2);
 
@@ -50,7 +51,8 @@ switch (command) {
         console.log(funS.funS(filesArr));
         break;
     case "-n":
-        console.log("give numbering to all the lines ")
+        // console.log("give numbering to all the lines ")
+        console.log(funN.funN(filesArr));
         break;
     case "-b":
         console.log("give numbering to non-empty lines")
