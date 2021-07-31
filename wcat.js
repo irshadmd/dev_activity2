@@ -4,13 +4,12 @@ let displayCon = require('./commands/displayCon.js')
 let funS = require('./commands/funS.js')
 let funN = require('./commands/funN.js')
 let funB = require('./commands/funB.js')
+let mix = require('./commands/mix.js')
 
 let inputArr = process.argv.slice(2);
 
 let filesArr = [];
 let commandsArr = [];
-
-console.log(inputArr);
 
 //input seperate
 for (let i = 0; i < inputArr.length; i++) {
@@ -20,10 +19,6 @@ for (let i = 0; i < inputArr.length; i++) {
         filesArr.push(inputArr[i]);
     }
 }
-
-console.log(commandsArr);
-console.log(filesArr);
-
 
 for (let i = 0; i < filesArr.length; i++) {
     //edge case 1 check
@@ -42,25 +37,24 @@ if (commandsArr.length == 0 && filesArr.length >= 1) {
     command = "mix";
 }
 
-console.log(command);
 switch (command) {
     case "display":
         console.log(displayCon.display(filesArr));
         break;
     case "-s":
-        // console.log("convert big line breaks into a singular line break");
+        // convert big line breaks into a singular line break
         console.log(funS.funS(filesArr));
         break;
     case "-n":
-        // console.log("give numbering to all the lines ")
+        // give numbering to all the lines
         console.log(funN.funN(filesArr));
         break;
     case "-b":
-        // console.log("give numbering to non-empty lines")
+        // give numbering to non-empty lines
         console.log(funB.funB(filesArr));
         break;
     case "mix":
-        console.log("We can mix and match the options.")
+        // We can mix and match the options.
+        console.log(mix.funMix(filesArr, commandsArr));
         break;
-
 }
